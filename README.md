@@ -1,24 +1,7 @@
 # JAVA学习目标目录
 
-## 基础部分
-### 后端基础
-- Java基础, 基础算法, 基础数据结构
-- Spring
-- Spring MVC
-- Mybatis
-- MySQL
-- Tomcat基础配置
+## 第一阶段训练目标
 
-### 前端基础
-- HTML/CSS
-- Javascript
-
-### 工具类
-- Git
-- Maven
-- Intellij IDEA / Eclipse
-
-## 实训部分
 ### 图书管理系统
 图书管理系统，是一个可以对图书进行数字录入，增加修改删除查找的简易系统，初始版本为控制台版本，操作方式为控制台显示菜单，用户选择菜单进行相应操作
 
@@ -41,3 +24,27 @@
 - 输入ID进行图书编辑
 - 输入ID删除指定图书
 
+
+
+
+
+--- 
+
+# 最终目标掌握基础部分
+
+### 后端基础
+- Java基础, 基础算法, 基础数据结构
+- Spring
+- Spring MVC
+- Mybatis
+- MySQL
+- Tomcat基础配置
+
+### 前端基础
+- HTML/CSS
+- Javascript
+
+### 工具基础
+- Git
+- Maven
+- Intellij IDEA 或 Eclipse， 推荐使用IDEA
