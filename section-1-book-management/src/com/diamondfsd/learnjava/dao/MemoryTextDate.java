@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class MemoryTextDate {
-    public static final String fileRoute = "D:/section-1-book-management/src/com/diamondfsd/learnjava/data";
+    public static final String fileRoute = "D:/learn-java/section-1-book-management/src/com/diamondfsd/learnjava/data";
     private static String sonRoute = "user01.txt";
     private static File file = new File(fileRoute,sonRoute);
 
