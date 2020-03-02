@@ -2,6 +2,7 @@ package com.diamondfsd.learnjava.dao;
 
 import com.diamondfsd.learnjava.entity.Book;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -15,11 +16,8 @@ public interface BookDAO {
 
     List<Book> allBook();
 
-    Book inIDofBookDeled(Integer id);
+    Book BookDelete(Integer id);
 
-    Book inIDofBookEdit(Integer id , Book book);
+    Book BookEdit(Integer id , Book book);
 
-    void outputFile();
-
-    void inputFile();
 }
