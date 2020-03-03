@@ -129,9 +129,9 @@ public class BookController {
                 break;
             case SECOND_MENU_EDIT_BOOK:
                 Integer editBookID = printTextAndGetInputInteger(OUT_PUT_TEXT_BOOK_ID);
-                if(bookService.bookIDisTrue(editBookID)){
-                    Book editBook = editBook(editBookID);
-                    bookService.inIDofEditBook(editBookID,editBook);
+                Book book = bookService.getById(editBookID);
+                if(book != null){
+                    bookService.EditBook(editBookID, book);
                     printString(OUT_PUT_TEXT_PROCESS_SUCCESS);
                 }else{
                     printString(OUT_PUT_TEXT_NO_BOOK_ID);
@@ -140,8 +140,9 @@ public class BookController {
                 break;
             case SECOND_MENU_DELETE_BOOK:
                 Integer bookID = printTextAndGetInputInteger(OUT_PUT_TEXT_BOOK_ID);
-                if(bookService.bookIDisTrue(bookID)){
-                    bookService.inIDofDeledBook(bookID);
+                Book storeBook = bookService.getById(bookID);
+                if(storeBook != null){
+                    bookService.DeleteBook(bookID);
                     printString(OUT_PUT_TEXT_PROCESS_SUCCESS);
                 }else{
                     printString(OUT_PUT_TEXT_NO_BOOK_ID);
@@ -153,12 +154,10 @@ public class BookController {
                 printBookAndWaitInput(books);
                 break;
             case SECOND_MENU_STORE_BOOK:
-                bookService.storeDataOutFile();
                 printString(OUT_PUT_TEXT_PROCESS_SUCCESS);
                 printMenuAndWaitInput();
                 break;
             case SECOND_MENU_INPUT_BOOK:
-                bookService.inputFileData();
                 printString(OUT_PUT_TEXT_PROCESS_SUCCESS);
                 printMenuAndWaitInput();
                 break;

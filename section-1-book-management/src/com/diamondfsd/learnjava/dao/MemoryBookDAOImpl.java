@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class MemoryBookDAOImpl implements BookDAO {
     Map<Integer, Book> bookStore = new HashMap<>();
-    MemoryTextDate userData = new MemoryTextDate();
 
     @Override
     public void insert(Book book) {
@@ -33,36 +32,15 @@ public class MemoryBookDAOImpl implements BookDAO {
         return new ArrayList<>(bookStore.values());
     }
 
+
     @Override
-    public Book inIDofBookDeled(Integer id){
+    public Book BookDelete(Integer id){
         return bookStore.remove(id);
     }
 
     @Override
-    public Book inIDofBookEdit(Integer id , Book book){
+    public Book BookEdit(Integer id , Book book){
         return bookStore.put(id,book);
-    }
-
-    @Override
-    public void outputFile(){
-        try{
-            userData.outputFileAllData(bookStore);
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void inputFile(){
-        try{
-            bookStore.putAll(userData.getFileAllData());
-        }catch (FileNotFoundException e){
-            e.printStackTrace();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
 

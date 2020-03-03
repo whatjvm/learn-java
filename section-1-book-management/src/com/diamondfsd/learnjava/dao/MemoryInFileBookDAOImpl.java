@@ -3,26 +3,25 @@ package com.diamondfsd.learnjava.dao;
 import com.diamondfsd.learnjava.entity.Book;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class MemoryInFileBookDAOImpl implements BookDAO {
 
-    private static final String fileRoute = "D:/learn-java/section-1-book-management/src/com/diamondfsd/learnjava/data";
-    private static final String fileName = "user01.txt";
-    private File file = new File(fileRoute,fileName);
+    private static final String FILE_ROUTE = "D:/learn-java/section-1-book-management/src/com/diamondfsd/learnjava/data";
+    private static final String FILE_NAME = "user01.txt";
+    private File file = new File(FILE_ROUTE, FILE_NAME);
     private BufferedReader bufferedReader = null;
     private BufferedWriter bufferedWriterAppend = null;
     private Map<Integer , Book> bookStore = new HashMap<>();
 
     public MemoryInFileBookDAOImpl() {
         try {
-            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file) , "UTF-8"));
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file) , StandardCharsets.UTF_8));
             bufferedWriterAppend = new BufferedWriter(new FileWriter(file ,true));
-        } catch (UnsupportedEncodingException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        } catch (IOException i) {
-            i.printStackTrace();
         }
 
     }
